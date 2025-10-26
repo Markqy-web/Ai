@@ -1,1 +1,119 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark-08 | Your Nonchalant Study Buddy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+    <custom-navbar></custom-navbar>
+    
+    <main class="container mx-auto px-4 py-8 min-h-screen">
+        <div id="vanta-bg" class="fixed inset-0 -z-10"></div>
+        
+        <section class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-5xl font-bold mb-4">Mark-08</h1>
+                <p class="text-xl text-gray-400">Your nonchalant AI study assistant. Ask me anything, I'll try to care.</p>
+            </div>
+            
+            <div class="bg-gray-800/80 backdrop-blur-md rounded-xl shadow-2xl overflow-hidden border border-gray-700">
+                <div class="h-96 overflow-y-auto p-6" id="chat-container">
+                    <div class="flex mb-4">
+                        <div class="bg-gray-700 rounded-full p-2 mr-3">
+                            <i data-feather="cpu" class="text-green-400"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="bg-gray-700/50 rounded-xl p-4 inline-block">
+                                <p>Hey. I'm Mark-08. Ask me stuff, I guess.</p>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Just now</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-700 p-4 bg-gray-800/50">
+                    <form id="chat-form" class="flex gap-2">
+                        <input 
+                            type="text" 
+                            id="user-input" 
+                            placeholder="Ask me something... if you want" 
+                            class="flex-1 bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                            autocomplete="off"
+                        >
+                        <button 
+                            type="submit" 
+                            class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2"
+                        >
+                            <i data-feather="send" class="w-5 h-5"></i>
+                            <span>Send</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-green-500 transition-colors cursor-pointer prompt-card" data-prompt="Explain quantum physics like I'm 5">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-gray-700 rounded-full p-2 mr-3">
+                            <i data-feather="atom" class="text-green-400"></i>
+                        </div>
+                        <h3 class="font-medium">Quantum Physics</h3>
+                    </div>
+                    <p class="text-gray-400">Explain quantum physics like I'm 5</p>
+                </div>
+                
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-green-500 transition-colors cursor-pointer prompt-card" data-prompt="Summarize the French Revolution in 3 sentences">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-gray-700 rounded-full p-2 mr-3">
+                            <i data-feather="book" class="text-green-400"></i>
+                        </div>
+                        <h3 class="font-medium">History</h3>
+                    </div>
+                    <p class="text-gray-400">Summarize the French Revolution in 3 sentences</p>
+                </div>
+                
+                <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-green-500 transition-colors cursor-pointer prompt-card" data-prompt="What's the derivative of x²?">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-gray-700 rounded-full p-2 mr-3">
+                            <i data-feather="divide-square" class="text-green-400"></i>
+                        </div>
+                        <h3 class="font-medium">Math</h3>
+                    </div>
+                    <p class="text-gray-400">What's the derivative of x²?</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <custom-footer></custom-footer>
+    
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3f6212,
+            backgroundColor: 0x111827,
+            points: 12.00,
+            maxDistance: 22.00,
+            spacing: 17.00
+        });
+    </script>
+</body>
+</html
